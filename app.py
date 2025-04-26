@@ -5,16 +5,10 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
-# Only download if resources are not already downloaded
-try:
-    nltk.data.find('corpora/stopwords')
-except LookupError:
-    nltk.download('stopwords')
-
-try:
-    nltk.data.find('tokenizers/punkt')
-except LookupError:
-    nltk.download('punkt')
+# Force download NLTK data at the start
+nltk.download('punkt', quiet=True)
+nltk.download('stopwords', quiet=True)
+nltk.download('punkt_tab', quiet=True)
 
 
 ps = PorterStemmer()
@@ -44,8 +38,8 @@ def transform(text):
     return " ".join(y)
 
 # Load models
-tfidf = pickle.load(open('D:\Jupyter Notebook\SMS Spam classifier\vectorizer_2.pkl', 'rb'))
-model = pickle.load(open('D:\Jupyter Notebook\SMS Spam classifier\model_2.pkl', 'rb'))
+tfidf = pickle.load(open('vectorizer_2.pkl', 'rb'))
+model = pickle.load(open('model_2.pkl', 'rb'))
 
 # Custom professional and attractive CSS styling
 st.markdown("""
