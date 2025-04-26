@@ -44,8 +44,8 @@ def transform(text):
     return " ".join(y)
 
 # Load models
-tfidf = pickle.load(open('vectorizer_2.pkl', 'rb'))
-model = pickle.load(open('model_2.pkl', 'rb'))
+tfidf = pickle.load(open('D:\Jupyter Notebook\SMS Spam classifier\vectorizer_2.pkl', 'rb'))
+model = pickle.load(open('D:\Jupyter Notebook\SMS Spam classifier\model_2.pkl', 'rb'))
 
 # Custom professional and attractive CSS styling
 st.markdown("""
