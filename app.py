@@ -4,6 +4,7 @@ import string
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
+import os
 
 # Force download NLTK data at the start
 nltk.download('punkt', quiet=True)
@@ -193,4 +194,5 @@ if st.button('Predict'):
         st.header("🚫 SPAM — Warning! This could be harmful.")
     else:
         st.header("🟢 NOT SPAM — You're good to go!")
+
 
