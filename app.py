@@ -38,8 +38,13 @@ def transform(text):
     return " ".join(y)
 
 # Load models
-tfidf = pickle.load(open('vectorizer_2.pkl', 'rb'))
-model = pickle.load(open('model_2.pkl', 'rb'))
+file_path = os.path.join(os.path.dirname(__file__), "vectorizer_2.pkl")
+with open(file_path, "rb") as f:
+    tfidf = pickle.load(f)
+
+model_path = os.path.join(os.path.dirname(__file__), "model_2.pkl")
+with open(model_path, "rb") as f:
+    model = pickle.load(f)
 
 # Custom professional and attractive CSS styling
 st.markdown("""
@@ -188,3 +193,4 @@ if st.button('Predict'):
         st.header("🚫 SPAM — Warning! This could be harmful.")
     else:
         st.header("🟢 NOT SPAM — You're good to go!")
+
